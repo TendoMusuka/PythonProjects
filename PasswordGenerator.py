@@ -1,5 +1,10 @@
-#Password Generator Project
-import random
+#Author: Rutendo Musuka
+#Purpose :Randomly generates password according to user requires
+#Date : 5 September,2022
+
+from random import sample
+
+password_generated = ''
 letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
@@ -11,7 +16,16 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 
 #Eazy Level - Order not randomised:
 #e.g. 4 letter, 2 symbol, 2 number = JduE&!91
-
+password_letters = sample(letters,k= nr_letters)
+password_symbols = sample(symbols,k=nr_symbols)
+password_numbers = sample(numbers,k=nr_numbers)
 
 #Hard Level - Order of characters randomised:
 #e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
+simple_password = password_letters + password_symbols + password_numbers #simple password would have been the solution for simple password
+password_scrabbled =sample(simple_password,nr_letters+nr_numbers+nr_symbols)
+
+for letter in password_scrabbled:
+    password_generated+=letter
+
+print(password_generated)
