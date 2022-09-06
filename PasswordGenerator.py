@@ -25,7 +25,7 @@ password_numbers = sample(numbers,k=nr_numbers)
 simple_password = password_letters + password_symbols + password_numbers #simple password would have been the solution for simple password
 password_scrabbled =sample(simple_password,nr_letters+nr_numbers+nr_symbols)
 
-for letter in password_scrabbled:
+for letter in password_scrabbled:  #could have used "".join(password_generated) as you can turn a list into a string
     password_generated+=letter
 
 print(password_generated)

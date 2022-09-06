@@ -1,3 +1,6 @@
+# Author :Rutendo Musuka
+# Purpose : Let's the user play hangman
+
 import random
 from hangman_art import stages, logo
 from hangman_words import word_list
