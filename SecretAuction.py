@@ -1,8 +1,10 @@
 # Author : Rutendo Musuka
-# Purpose : Ask user to particpant in a secret auction where they do not know how much other users are bidding
+# Purpose : Ask user to participant in a secret auction where they do not know how much other users are bidding
 import os
+
 bids = {}
 bidding_finished = False
+
 
 def find_highest_bidder(bidding_record):
     highest_bid = 0
@@ -15,14 +17,16 @@ def find_highest_bidder(bidding_record):
             winner = bidder
     print(f"The winner is {winner} with a bid of ${highest_bid}")
 
+
 def screen_clear():
-   # for mac and linux(here, os.name is 'posix')
-   if os.name == 'posix':
-      _ = os.system('clear')
-   else:
-      # for windows platfrom
-      _ = os.system('cls')
-   # print out some text
+    # for mac and linux(here, os.name is 'posix')
+    if os.name == 'posix':
+        _ = os.system('clear')
+    else:
+        # for windows platform
+        _ = os.system('cls')
+    # print out some text
+
 
 while not bidding_finished:
     name = input("What is your name?: ")
@@ -34,6 +38,3 @@ while not bidding_finished:
         find_highest_bidder(bids)
     elif should_continue == "yes":
         screen_clear()
-
-
-
